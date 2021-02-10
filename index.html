@@ -136,6 +136,70 @@
 <div class="row">
 	<div class="col-md-8">
 		<h3 class="title">
+			<a href="/2021/02/10/CobaltStrike前哨配置/" ></a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2021-02-10  </div>
+		</div>
+	</div>
+	
+
+
+			<!--
+<div class="entry">
+  <div class="row">
+	
+	
+		<h1 id="CobaltStrike前哨配置"><a href="#CobaltStrike前哨配置" class="headerlink" title="CobaltStrike前哨配置"></a>CobaltStrike前哨配置</h1><p>一、去特征：</p>
+<p>  1.更改默认端口，直接vim teamserver修改端口。</p>
+<p><img src="/CobaltStrike/1.png" alt="img"> </p>
+<ol start="2">
+<li>去除证书特征，keytool -list -v -keystore cobaltstrike.store</li>
+</ol>
+<p>查看证书情况，输入默认密码123456回车，可以看到CobaltStrike明显特征。</p>
+<p><img src="/CobaltStrike/2.png" alt="img"> </p>
+<ol start="3">
+<li>修改 keytool</li>
+</ol>
+<p>keytool是一个Java 数据证书的管理工具，使用如下：</p>
+<p>-keytool -keystore cobaltstrike.store -storepass 密码</p>
+	
+
+	</div>
+  <a type="button" href="/2021/02/10/CobaltStrike前哨配置/#more" class="btn btn-default more">Read More</a>
+</div>
+
+-->
+<div class="entry">
+  <div class="row">
+	
+	
+		<h1 id="CobaltStrike前哨配置"><a href="#CobaltStrike前哨配置" class="headerlink" title="CobaltStrike前哨配置"></a>CobaltStrike前哨配置</h1><p>一、去特征：</p>
+<p>  1.更改默认端口，直接vim teamserver修改端口。</p>
+<p><img src="/CobaltStrike/1.png" alt="img"> </p>
+<ol start="2">
+<li>去除证书特征，keytool -list -v -keystore cobaltstrike.store</li>
+</ol>
+<p>查看证书情况，输入默认密码123456回车，可以看到CobaltStrike明显特征。</p>
+<p><img src="/CobaltStrike/2.png" alt="img"> </p>
+<ol start="3">
+<li>修改 keytool</li>
+</ol>
+<p>keytool是一个Java 数据证书的管理工具，使用如下：</p>
+<p>-keytool -keystore cobaltstrike.store -storepass 密码</p>
+	
+	</div>
+  <a type="button" href="/2021/02/10/CobaltStrike前哨配置/#more" class="btn btn-default more">Read More</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
 			<a href="/2021/02/10/通讯录管理系统/" ></a>
 		</h3>
 		</div>
@@ -305,6 +369,10 @@
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2021/02/10/CobaltStrike前哨配置/" ><i class="fa fa-file-o"></i></a>
+      </li>
     
       <li>
         <a href="/2021/02/10/通讯录管理系统/" ><i class="fa fa-file-o"></i></a>

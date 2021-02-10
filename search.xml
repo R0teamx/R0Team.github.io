@@ -5,6 +5,19 @@
     
     <entry>
       <title></title>
+      <link href="2021/02/10/CobaltStrike%E5%89%8D%E5%93%A8%E9%85%8D%E7%BD%AE/"/>
+      <url>2021/02/10/CobaltStrike%E5%89%8D%E5%93%A8%E9%85%8D%E7%BD%AE/</url>
+      
+        <content type="html"><![CDATA[<h1 id="CobaltStrike前哨配置"><a href="#CobaltStrike前哨配置" class="headerlink" title="CobaltStrike前哨配置"></a>CobaltStrike前哨配置</h1><p>一、去特征：</p><p>  1.更改默认端口，直接vim teamserver修改端口。</p><p><img src="/CobaltStrike/1.png" alt="img"> </p><ol start="2"><li>去除证书特征，keytool -list -v -keystore cobaltstrike.store</li></ol><p>查看证书情况，输入默认密码123456回车，可以看到CobaltStrike明显特征。</p><p><img src="/CobaltStrike/2.png" alt="img"> </p><ol start="3"><li>修改 keytool</li></ol><p>keytool是一个Java 数据证书的管理工具，使用如下：</p><p>-keytool -keystore cobaltstrike.store -storepass 密码</p><p>-keypass 密码</p><p>-genkey -keyalg RSA</p><p>-alias google.com -dname “CN=(名字与姓氏),</p><p>OU=(组织单位名称), O=(组织名称),</p><p>L=(城市或区域名称),</p><p>ST=(州或省份名称),</p><p>C=(单位的两字母国家代码)。</p><p>keytool -keystore cobaltstrike.store -storepass 123456 -keypass 123456 -genkey -keyalg RSA -alias google.com -dname “CN=US, OU=”google.com“, O=“Sofatest”, L=GoogleInc, ST=Cyberspace, C=US”</p><p><img src="/CobaltStrike/3.png" alt="img"> </p><p>二、配置C2：</p><p>传输过程中，把流量伪造成高信誉的网站，比如Google 、bing等 。</p><p>现在的大多数硬件WAF防护设备都能检测出来CS的流量特征，所以我们必须要修改CS的流量特征，CS的流量由malleable C2配置来掌控的，所以我们需要定向去配置这个C2。</p><p>开始配置：Malleable配置文件下载：</p><p>git clone <a href="https://github.com/rsmudge/Malleable-C2-Profiles.git">https://github.com/rsmudge/Malleable-C2-Profiles.git</a></p><p>示例：基于string_of_paerls的配置文件作为基础</p><p>运行测试语法：./c2lint string_of_paerls.profile </p><p><img src="/CobaltStrike/4.png" alt="img"> </p><p>运行teamserver：./teamserver 192.168.43.186 123456 jquery-c2.4.2.profile</p><p><img src="/CobaltStrike/5.png" alt="img"> </p><p>三、cna插件合集：</p><p><a href="https://github.com/qiyeboy/Cobalt-Strike-Aggressor-Scripts">https://github.com/qiyeboy/Cobalt-Strike-Aggressor-Scripts</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
       <link href="2021/02/10/%E9%80%9A%E8%AE%AF%E5%BD%95%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/"/>
       <url>2021/02/10/%E9%80%9A%E8%AE%AF%E5%BD%95%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/</url>
       
